@@ -41,3 +41,20 @@ public void put(K key, V value) {
         Node<K, V> node = get(root, key);
         return node == null ? null : node.value;
     }
+    
+    private Node<K, V> get(Node<K, V> node, K key) {
+        if (node == null) {
+            return null;
+        }
+        int cmp = key.compareTo(node.key);
+        if (cmp < 0) {
+            return get(node.left, key);
+        } else if (cmp > 0) {
+            return get(node.right, key);
+        } else {
+            return node;
+        }
+    }
+    public void delete(K key) {
+        root = delete(root, key);
+    }
