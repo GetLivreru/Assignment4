@@ -107,3 +107,17 @@ private Node<K, V> min(Node<K, V> node) {
     public boolean isEmpty() {
         return size == 0;
     }
+    @Override
+    public Iterator<Node<K, V>> iterator() {
+        return new InOrderIterator<>(root);
+    }
+
+    private static class InOrderIterator<K extends Comparable<K>, V> implements Iterator<Node<K, V>> {
+
+        private Node<K, V> current;
+        private Stack<Node<K, V>> stack;
+
+        public InOrderIterator(Node<K, V> root) {
+            current = root;
+            stack = new Stack<>();
+        }
