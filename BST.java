@@ -83,3 +83,27 @@ public void put(K key, V value) { // insert a key-value pair into the binary sea
         }
         return node;
     }
+private Node<K, V> min(Node<K, V> node) {
+        if (node.left == null) {
+            return node;
+        } else {
+            return min(node.left);
+        }
+    }
+
+    private Node<K, V> deleteMin(Node<K, V> node) {
+        if (node.left == null) {
+            size--;
+            return node.right;
+        }
+        node.left = deleteMin(node.left);
+        return node;
+    }
+
+    public int size() {
+        return size;
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
