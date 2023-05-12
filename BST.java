@@ -121,3 +121,21 @@ private Node<K, V> min(Node<K, V> node) {
             current = root;
             stack = new Stack<>();
         }
+        @Override
+        public boolean hasNext() {
+            return current != null || !stack.isEmpty();
+        }
+
+        @Override
+        public Node<K, V> next() {
+            while (current != null) {
+                stack.push(current);
+                current = current.left;
+            }
+            current = stack.pop();
+            Node<K, V> node = current;
+            current = current.right;
+            return node;
+        }
+    }
+    //
