@@ -145,8 +145,19 @@ private Node<K, V> min(Node<K, V> node) {
         tree.put(7, "seven");
         tree.put(1, "one");
         tree.put(6, "six");
+         System.out.println("Size: " + tree.size());
 
-        
+        for (Node<Integer, String> node : tree) {
+            System.out.println("Key: " + node.key + " Value: " + node.value);
+        }
+
+        tree.delete(2);
+
+        System.out.println("Size: " + tree.size());
+
+        for (Node<Integer, String> node : tree) {
+            System.out.println("Key: " + node.key + " Value: " + node.value);
+            
         }
     }
 }
