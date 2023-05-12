@@ -138,4 +138,16 @@ private Node<K, V> min(Node<K, V> node) {
             return node;
         }
     }
-    //
+    public static void main(String[] args) {
+        BST<Integer, String> tree = new BST<>();
+        tree.put(5, "five");
+        tree.put(2, "two");
+        tree.put(7, "seven");
+        tree.put(1, "one");
+        tree.put(6, "six");
+
+        
+        }
+    }
+}
+
