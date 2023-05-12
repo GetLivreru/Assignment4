@@ -139,26 +139,27 @@ private Node<K, V> min(Node<K, V> node) {
         }
     }
     public static void main(String[] args) {
+          // create an instance of BST and insert key-value pairs
         BST<Integer, String> tree = new BST<>();
         tree.put(5, "five");
         tree.put(2, "two");
         tree.put(7, "seven");
         tree.put(1, "one");
         tree.put(6, "six");
+         // print the size of the tree
          System.out.println("Size: " + tree.size());
-
-        for (Node<Integer, String> node : tree) {
-            System.out.println("Key: " + node.key + " Value: " + node.value);
+        // iterate over nodes in the tree and print key-value pairs
+        for (BST.Node<Integer, String> node : tree) {
+        System.out.println("Key: " + node.key + " Value: " + node.value);
         }
-
-        tree.delete(2);
-
-        System.out.println("Size: " + tree.size());
-
-        for (Node<Integer, String> node : tree) {
-            System.out.println("Key: " + node.key + " Value: " + node.value);
-            
-        }
-    }
+        // delete a node from the tree
+        tree.delete(2); 
+        // print the updated size of the tree
+        System.out.println("Size: " + tree.size());  
+        // iterate over nodes in the tree again and print key-value pairs
+        for (BST.Node<Integer, String> node : tree) {
+        System.out.println("Key: " + node.key + " Value: " + node.value);
+     }
+   }
 }
 
